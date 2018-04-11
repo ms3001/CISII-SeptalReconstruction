@@ -12,15 +12,15 @@ import plotly
 plotly.offline.init_notebook_mode()
 
 
-def visualize(dataSources, start, end):
+def visualize(dataSources):
 
 	data = []
 	
 
 	for d in dataSources:
-		x = [d[i][0,0] for i in range(start, end)]
-		y = [d[i][0,1] for i in range(start, end)]
-		z = [d[i][0,2] for i in range(start, end)]
+		x = [d[i][0,0] for i in range(len(d))]
+		y = [d[i][0,1] for i in range(len(d))]
+		z = [d[i][0,2] for i in range(len(d))]
 
 		trace = go.Scatter3d(
 			x=x,
